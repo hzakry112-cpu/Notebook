@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali's Birthday Scrapbook 🌌✨</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@500;700;900&family=Reenie+Beanie&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- StPageFlip Library for Realistic Page Turn -->
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@0.7.8/dist/js/page-flip.browser.js"></script>
+
+  <style>
+    body {
+      background-color: #05050d;
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%);
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Twinkling Stars Background */
+    .stars-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(1px 1px at 10px 10px, #ffffff, rgba(0,0,0,0)),
+                  radial-gradient(1px 1px at 150px 150px, #e2e8f0, rgba(0,0,0,0)),
+                  radial-gradient(2px 2px at 300px 80px, #a855f7, rgba(0,0,0,0)),
+                  radial-gradient(1.5px 1.5px at 450px 250px, #38bdf8, rgba(0,0,0,0));
+      background-size: 550px 550px;
+      animation: starsTwinkle 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes starsTwinkle {
+      0% { opacity: 0.4; transform: scale(1); }
+      100% { opacity: 0.9; transform: scale(1.02); }
+    }
+
+    /* Flipbook Container styling */
+    .flipbook-wrapper {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 10px;
+    }
+
+    .page {
+      background-color: #0b0f19;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* Custom Back Cover Style */
+    .back-cover-design {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #090d16 0%, #111827 50%, #1e112a 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      position: relative;
+    }
+
+    .font-orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .font-handwriting {
+      font-family: 'Reenie Beanie', cursive;
+    }
+
+    /* Glass Card Effect */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-between min-h-screen text-slate-100 p-4">
+
+  <!-- Stars Dynamic Background -->
+  <div class="stars-bg"></div>
+
+  <!-- Header Section -->
+  <header class="z-10 text-center my-4">
+    <h1 class="font-orbitron text-2xl md:text-4xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+      ALI'S SCRAPBOOK
+    </h1>
+    <p class="text-xs md:text-sm text-indigo-300/80 mt-1 tracking-wider">
+      ✨ Drag page corners or use buttons to flip ✨
+    </p>
+  </header>
+
+  <!-- Interactive Flipbook -->
+  <div class="flipbook-wrapper w-full max-w-4xl my-auto">
+    <div id="flipbook">
+      
+      <!-- Cover Page -->
+      <div class="page" data-density="hard">
+        <img src="https://i.ibb.co/TfpmcCf/Untitled65-20261014024648.png" alt="Cover" class="page-img" />
+      </div>
+
+      <!-- Page 1 -->
+      <div class="page">
+        <img src="https://i.ibb.co/W4B7qbnX/Untitled61-20261014013129.png" alt="Page 1" class="page-img" />
+      </div>
+
+      <!-- Page 2 -->
+      <div class="page">
+        <img src="https://i.ibb.co/tpfyWk5k/IMG-7230.png" alt="Page 2" class="page-img" />
+      </div>
+
+      <!-- Page 3 -->
+      <div class="page">
+        <img src="https://i.ibb.co/JRdWtz1v/Untitled64-20261014023753.png" alt="Page 3" class="page-img" />
+      </div>
+
+      <!-- Page 4 (Space / QR Page) -->
+      <div class="page">
+        <img src="https://i.ibb.co/qYfPrrSm/Untitled67-20261017165553.png" alt="Page 4" class="page-img" />
+      </div>
+
+      <!-- Back Cover (Custom Space Design) -->
+      <div class="page" data-density="hard">
+        <div class="back-cover-design">
+          <div class="glass-card p-6 rounded-2xl max-w-xs border border-purple-500/30">
+            <div class="text-4xl mb-3">🚀✨</div>
+            <h2 class="font-orbitron text-lg font-bold text-cyan-300 tracking-wider mb-2">
+              THE END OF THE JOURNEY
+            </h2>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              "To infinity and beyond... May your year be as vast and bright as the galaxy!"
+            </p>
+            <div class="h-0.5 w-16 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto my-3"></div>
+            <span class="font-handwriting text-2xl text-purple-300">Made with 🤍</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Navigation Controls -->
+  <footer class="z-10 flex items-center gap-4 my-4">
+    <button id="prev-btn" class="glass-card px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wider hover:bg-indigo-600/40 active:scale-95 transition-all text-cyan-300 flex items-center gap-2 border border-cyan-500/30">
+      ◀ PREV
+    </button>
+    <span id="page-num" class="font-orbitron text-xs text-indigo-300/90 px-3 py-1 glass-card rounded-full">
+      Page 1 / 6
+    </span>
+    <button id="next-btn" class="glass-card px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wider hover:bg-indigo-600/40 active:scale-95 transition-all text-cyan-300 flex items-center gap-2 border border-cyan-500/30">
+      NEXT ▶
+    </button>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const pageFlip = new St.PageFlip(document.getElementById('flipbook'), {
+        width: 380,
+        height: 520,
+        size: 'fixed',
+        minWidth: 300,
+        maxWidth: 500,
+        minHeight: 400,
+        maxHeight: 700,
+        maxShadowOpacity: 0.7,
+        showCover: true,
+        mobileScrollSupport: true
+      });
+
+      pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const pageNumDisplay = document.getElementById('page-num');
+
+      prevBtn.addEventListener('click', () => {
+        pageFlip.flipPrev();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        pageFlip.flipNext();
+      });
+
+      pageFlip.on('flip', (e) => {
+        const currentPage = e.data + 1;
+        const totalPages = pageFlip.getPageCount();
+        pageNumDisplay.textContent = `Page ${currentPage} / ${totalPages}`;
+      });
+    });
+  </script>
+</body>
+</html>
